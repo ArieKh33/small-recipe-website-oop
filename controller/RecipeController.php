@@ -35,7 +35,7 @@ class RecipeController {
     public function collectListRecipe()
     {
         $recipes = $this->recipes->listRecipes();
-        include("view/listrecipes.php");
+        include("view/ListRecipes.php");
     }
 }
 

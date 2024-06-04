@@ -11,7 +11,9 @@ class RecipeLogic
 
     public function listRecipes()
     {
-        $sql = "SELECT * FROM recipes";
+        $sql = "SELECT titel, datum, likes,  writers.writerName   FROM recipes
+        INNER JOIN writers ON recipes.writer_id = writers.id";
+
         $results = $this->RecipeLogic->readsData($sql);
         return $results;
     }
