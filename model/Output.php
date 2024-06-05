@@ -1,10 +1,15 @@
-<?php 
+<pre><?php
+
+require_once("controller/RecipeController.php");
+require_once("model/DataHandler.php");
+
 
 class Output
 {
 
-    public function __construct() {
-        $this->tableHeader = FALSE;
+    public function __construct()
+    {    
+        include("controller/RecipeController.php");
     }
 
     public function showData()
@@ -12,22 +17,22 @@ class Output
         while($row = $recipes->fetch(PDO::FETCH_ASSOC)) {
             // var_dump($row);
 
-            $this->tableHeader = FALSE;
+            // $this->tableHeader = FALSE;
             $html = "<table>";
             // table tags neerzetten
         
             // Rij starten <tr>
         
-            if ($tableHeader == FALSE) {
-                $html .= "<tr>";
-                foreach ($row as $key => $value) {
-                    $html .= "<th>";
-                    $html .= $key;
-                    $html .= "</th>";
-                }
-                $html .= "</tr>";
-            $tableHeader = TRUE;
-            }
+            // if ($tableHeader == FALSE) {
+            //     $html .= "<tr>";
+            //     foreach ($row as $key => $value) {
+            //         $html .= "<th>";
+            //         $html .= $key;
+            //         $html .= "</th>";
+            //     }
+            //     $html .= "</tr>";
+            // $tableHeader = TRUE;
+            // }
         
         
             // Voor elke value een begin en eind <td>
@@ -50,6 +55,10 @@ class Output
 
 }
 
+// while($row = $recipes->fetch(PDO::FETCH_ASSOC)) {
+//     var_dump($row);
 
+// }
 
 ?>
+</pre>

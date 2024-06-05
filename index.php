@@ -4,7 +4,9 @@ require_once("controller/RecipeController.php");
 
 $controller = new RecipeController();
 $controller->handleRequest();
-$view = new Output();
-$view->showTable();
+var_dump($controller);
+$output = new Output();
+var_dump($output);
+// $output->showData();
 
 ?>
