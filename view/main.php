@@ -7,7 +7,6 @@
 </head>
 <body>
     <?php
-    require_once()
 
     foreach ($row as $data) {
         echo $data;
