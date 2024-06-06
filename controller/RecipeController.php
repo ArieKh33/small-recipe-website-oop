@@ -1,12 +1,17 @@
 <?php 
 
 require_once("model/RecipeLogic.php");
+require_once("model/Output.php");
 
 class RecipeController {
 
+    public RecipeLogic $recipeLogic;
+    public Output $output;
+
     public function __construct()
     {
-        $this->recipes = new RecipeLogic; 
+        $this->recipeLogic = new RecipeLogic(); 
+        $this->output = new Output();
     }
     
     public function handleRequest()
@@ -34,8 +39,8 @@ class RecipeController {
 
     public function collectListRecipe()
     {
-        $recipes = $this->recipes->listRecipes();
-        include("model/Output.php");
+        $recipes = $this->recipeLogic->listRecipes();
+        $this->output->showData($recipes);
     }
 }
 
