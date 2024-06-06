@@ -11,11 +11,7 @@ class DataHandler{
 
 	public function __construct($host, $dbdriver, $dbname, $username, $password)
 	{
-		// $this->host = $host;
-		// $this->dbdriver = $dbdriver;
-		// $this->dbname = $dbname;
-		// $this->username = $username;
-		// $this->password = $password;
+
 
 		try {
 			$this->dbh = new PDO("$dbdriver:host=$host;dbname=$dbname", $username, $password);
@@ -43,14 +39,8 @@ class DataHandler{
         $thing->execute();
         return $result = $thing->fetchAll();
 
-		// return $this->dbh->query($sql,PDO::FETCH_ASSOC);
 	}
 
-	// public function readsData($sql)
-    // {
-	// 	// $this->query($sql);
-	// 	return $this->dbh->query($sql,PDO::FETCH_ASSOC);
-	// }
 
 	public function updateData($sql)
     {
