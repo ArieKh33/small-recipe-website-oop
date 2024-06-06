@@ -5,7 +5,7 @@ class Output
 {
 
     public function __construct()
-    {    
+    {
     }
 
     public function showData($recipes)
